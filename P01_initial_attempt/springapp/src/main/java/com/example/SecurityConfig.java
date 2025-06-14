@@ -14,6 +14,12 @@ import static org.springframework.security.config.http.SessionCreationPolicy.STA
 @EnableMethodSecurity
 public class SecurityConfig {
 
+    private final JwtAuthConverter jwtAuthConverter;
+
+    public SecurityConfig(JwtAuthConverter jwtAuthConverter) {
+        this.jwtAuthConverter = jwtAuthConverter;
+    }
+
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
@@ -25,7 +31,8 @@ public class SecurityConfig {
 
         http
                 .oauth2ResourceServer()
-                    .jwt();
+                    .jwt()
+                    .jwtAuthenticationConverter(jwtAuthConverter);
 
         http
                 .sessionManagement()
