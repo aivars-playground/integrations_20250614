@@ -1,4 +1,4 @@
-package com.example.springapp;
+package com.example;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -8,11 +8,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/v1/demo")
 public class DemoController {
 
-    @GetMapping("/insecure")
-    public Response insecure() {
-        return new Response("insecure response");
+    @GetMapping("/user")
+    public String user() {
+        return "HELLO USER";
     }
 
+    @GetMapping("/admin")
+    public String admin() { return "HELLO ADMIN"; }
 }
-
-record Response(String message){};
