@@ -1,0 +1,18 @@
+meta {
+  name: get token - user1
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:9999/realms/my-realm/protocol/openid-connect/token
+  body: formUrlEncoded
+  auth: inherit
+}
+
+body:form-urlencoded {
+  grant_type: password
+  client_id: my-application-client
+  username: user1
+  password: secret
+}

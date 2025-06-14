@@ -1,0 +1,50 @@
+{
+  "realm" : "my-realm",
+  "users" : [ {
+    "id" : "2cc8239e-791e-4aa3-8cc7-1161a02840e6",
+    "username" : "superuser1",
+    "firstName" : "SuperuserName1",
+    "lastName" : "MacSuperuser1",
+    "email" : "superuser1@localhost",
+    "emailVerified" : true,
+    "createdTimestamp" : 1749922613486,
+    "enabled" : true,
+    "totp" : false,
+    "credentials" : [ {
+      "id" : "3c168bc3-26c1-4b11-bfae-78b4de72ef79",
+      "type" : "password",
+      "userLabel" : "My password",
+      "createdDate" : 1749922625194,
+      "secretData" : "{\"value\":\"iGSheBIIochNzyuiYBjYPlexz6U4/mKk6+ce/e021ok=\",\"salt\":\"87klx+rg9k7nmy4+gdFJBw==\",\"additionalParameters\":{}}",
+      "credentialData" : "{\"hashIterations\":5,\"algorithm\":\"argon2\",\"additionalParameters\":{\"hashLength\":[\"32\"],\"memory\":[\"7168\"],\"type\":[\"id\"],\"version\":[\"1.3\"],\"parallelism\":[\"1\"]}}"
+    } ],
+    "disableableCredentialTypes" : [ ],
+    "requiredActions" : [ ],
+    "realmRoles" : [ "default-roles-my-realm", "my-realm-admin" ],
+    "notBefore" : 0,
+    "groups" : [ ]
+  }, {
+    "id" : "d0fff536-cd9c-4eef-8b88-8f1281cdb831",
+    "username" : "user1",
+    "firstName" : "UserName1",
+    "lastName" : "MacUser1",
+    "email" : "user1@localhost",
+    "emailVerified" : true,
+    "createdTimestamp" : 1749922552203,
+    "enabled" : true,
+    "totp" : false,
+    "credentials" : [ {
+      "id" : "c01fc6e4-3738-4220-a0ee-b3d798691de7",
+      "type" : "password",
+      "userLabel" : "My password",
+      "createdDate" : 1749922784696,
+      "secretData" : "{\"value\":\"5b8I7h8kYDsTaP88pP9nYtpqtzPBt0eu8K2jwThN8MU=\",\"salt\":\"mdRs5GA0/Sgf20ckonR3Vw==\",\"additionalParameters\":{}}",
+      "credentialData" : "{\"hashIterations\":5,\"algorithm\":\"argon2\",\"additionalParameters\":{\"hashLength\":[\"32\"],\"memory\":[\"7168\"],\"type\":[\"id\"],\"version\":[\"1.3\"],\"parallelism\":[\"1\"]}}"
+    } ],
+    "disableableCredentialTypes" : [ ],
+    "requiredActions" : [ ],
+    "realmRoles" : [ "my-realm-user", "default-roles-my-realm" ],
+    "notBefore" : 0,
+    "groups" : [ ]
+  } ]
+}
