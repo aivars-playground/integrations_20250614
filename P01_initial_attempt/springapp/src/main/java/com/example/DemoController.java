@@ -11,10 +11,15 @@ public class DemoController {
 
     @GetMapping("/user")
     @PreAuthorize("hasRole('my-app-user')")
-    public String user() {
-        return "HELLO USER";
+    public Response user() {
+        return new Response("HELLO USER");
     }
 
     @GetMapping("/admin")
-    public String admin() { return "HELLO ADMIN"; }
+    @PreAuthorize("hasRole('my-app-admin')")
+    public Response admin() {
+        return new Response("HELLO ADMIN");
+    }
 }
+
+record Response(String message) {}

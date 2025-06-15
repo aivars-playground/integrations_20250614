@@ -16,3 +16,8 @@ body:form-urlencoded {
   username: user1
   password: secret
 }
+
+script:post-response {
+  let data = res.body;
+  bru.setEnvVar("local_bearer_token", data.access_token);
+}
