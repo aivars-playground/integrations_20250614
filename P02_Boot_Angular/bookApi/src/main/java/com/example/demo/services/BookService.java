@@ -32,10 +32,17 @@ public class BookService {
     }
 
     public Book update(Book book, long id) {
-        BookEntity entity = toBookEntity(book);
-        entity.setId(id);
-        bookRepository.save(entity);
-        return toBookRecord(entity);
+        BookEntity existing = bookRepository.findById(id).get();
+        toUpdatedBookEntityWithVersion(existing, book);
+        bookRepository.save(existing);
+        return toBookRecord(existing);
+    }
+
+    private void toUpdatedBookEntityWithVersion(BookEntity existing, Book book)  {
+        existing.setVersion(book.version());
+        existing.setAuthor(book.author());
+        existing.setTitle(book.title());
+        existing.setIsbn(book.isbn());
     }
 
     private BookEntity toBookEntity(Book book)  {
@@ -51,7 +58,8 @@ public class BookService {
                 bookEntity.getId(),
                 bookEntity.getTitle(),
                 bookEntity.getAuthor(),
-                bookEntity.getIsbn()
+                bookEntity.getIsbn(),
+                bookEntity.getVersion()
         );
     }
 

@@ -1,4 +1,4 @@
 package com.example.demo.controllers;
 
-public record Book(long id, String title, String author, String isbn) {
+public record Book(long id, String title, String author, String isbn, int version) {
 }
